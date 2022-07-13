@@ -26,6 +26,29 @@ const arr = [
 ];
 
 function App() {
+	const [items, setItems] = React.useState([]);
+	const [cartItems, setCartItems] = React.useState([]);
+	const [searchValue, setSearchValue ] = React.useState('');
+	const [cartOpened, setCartOpened] = React.useState(false);
+
+	React.useEffect(() => {
+		fetch('https://62bc12c6eff39ad5ee1bc7e3.mockapi.io/items')
+			.then((res) => {
+				return res.json();
+			})
+			.then((json) => {
+				setItems(json);
+			});
+	}, []);
+
+	const onAddToCart = (obj) => {
+		setCartItems(prevState => [...prevState, obj]);
+	};
+
+	const onChangeSearchInput = (event) =>{
+		setSearchValue(event.target.value);
+	};
+
 	return (
 		<div className="wrapper">
 			<Drawer/>
