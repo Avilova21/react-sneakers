@@ -51,8 +51,8 @@ function App() {
 
 	return (
 		<div className="wrapper">
-			<Drawer/>
-			<Header/>
+			{cartOpened && <Drawer items={cartItems} onClose = {() => setCartOpened(false)}/> }
+			<Header onClickCart = {() => setCartOpened(true)} />
 
 			<div className="content">
 				<div className="search">
