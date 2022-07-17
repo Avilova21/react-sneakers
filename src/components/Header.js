@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 function Header (props) {
 	return (
 		<header>
+			<Link to="/">
 			<div className="headerLeft">
 				<img width={40} height={40} src="/img/logo.png" alt="logo"/>
 				<div>
@@ -10,6 +11,7 @@ function Header (props) {
 					<p>Магазин лучших кроссовок</p>
 				</div>
 			</div>
+			</Link>
 
 			<ul className="headerRight">
 				<li onClick={props.onClickCart}>
