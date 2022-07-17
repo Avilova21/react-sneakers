@@ -38,11 +38,13 @@ header {
 
     h3 {
       margin: 0;
+      color: black;
     }
 
     p {
       opacity: 0.5;
       margin: 0;
+      color: black;
     }
   }
 
@@ -52,6 +54,11 @@ header {
     li {
       list-style-type: none;
       margin-right: 30px;
+      cursor: pointer;
+    }
+
+    .heart {
+      margin-right: 20px;
       cursor: pointer;
     }
   }
@@ -183,6 +190,39 @@ header {
           opacity: 1;
         }
       }
+    }
+  }
+}
+
+.cartEmpty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  p {
+    width: 280px;
+    line-height: 24px;
+    opacity: 40%;
+  }
+
+  .greenButton {
+    width: 245px;
+    margin-top: 20px;
+
+    &:hover {
+      img {
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
+
+    img {
+      position: relative;
+      top:1px;
+      transform: rotate(180deg);
+      margin-right: 15px;
+      transition: transform 0.15s ease-in-out;
     }
   }
 }
